@@ -3,6 +3,7 @@
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { Input } from '$lib/components/ui/input';
 	import * as Popover from '$lib/components/ui/popover/index.js';
+	import { itemDetails } from '$lib/items';
 	import { villagerInventoryStore, type Villager } from '$lib/stores/villager-inventory';
 	import { professions } from '$lib/villagers';
 	import CheckIcon from '@lucide/svelte/icons/check';
@@ -24,6 +25,17 @@
 	let selectedProfessionTrades = $derived(
 		professions[selectedProfession as keyof typeof professions].possibleTrades
 	);
+
+	const getLevelTrades = (level: string) =>
+		selectedProfessionTrades.filter((trade) => trade.level === level);
+
+	let levels = [
+		{ level: 'novice', label: 'Novice' },
+		{ level: 'apprentice', label: 'Apprentice' },
+		{ level: 'journeyman', label: 'Journeyman' },
+		{ level: 'expert', label: 'Expert' },
+		{ level: 'master', label: 'Master' }
+	];
 
 	const VillagerSchema = z.object({
 		profession: z.string(),
@@ -48,7 +60,7 @@
 	const form = createForm(() => ({
 		defaultValues: {
 			profession: selectedProfession,
-			prominentTrades: [{ trade: '0' }] as Villager['prominentTrades']
+			prominentTrades: [{ trade: '' }] as Villager['prominentTrades']
 		},
 		validators: {
 			onChange: VillagerSchema
@@ -100,7 +112,7 @@
 									</Button>
 								{/snippet}
 							</Popover.Trigger>
-							<Popover.Content class="w-full p-0">
+							<Popover.Content class="w-(--bits-popover-anchor-width) p-0">
 								<Command.Root>
 									<Command.Input placeholder="Search profession..." />
 									<Command.List>
@@ -179,7 +191,9 @@
 								{/if}
 								<form.Field name={`prominentTrades[${i}].trade`}>
 									{#snippet children(subField)}
-										{@const selectedTrade = selectedProfessionTrades[Number(subField.state.value)]}
+										{@const selectedTrade = selectedProfessionTrades.find(
+											(trade) => trade.id === subField.state.value
+										)}
 										<div>
 											<label>
 												<Popover.Root>
@@ -216,41 +230,49 @@
 															</Button>
 														{/snippet}
 													</Popover.Trigger>
-													<Popover.Content class="w-full p-0">
+													<Popover.Content class="w-(--bits-popover-anchor-width) p-0">
 														<Command.Root>
 															<Command.Input placeholder="Search trade..." />
 															<Command.List>
 																<Command.Empty>No trade found.</Command.Empty>
-																<Command.Group>
-																	{#each selectedProfessionTrades as trade, tradeIndex}
-																		<Command.Item
-																			value={String(tradeIndex)}
-																			onSelect={() => {
-																				subField.handleChange(String(tradeIndex));
-																				closeAndFocusTrigger();
-																			}}
-																		>
-																			{#each trade.wants as item}
-																				<img
-																					class="size-4 [image-rendeering:pixelated]"
-																					src={`/assets/items/${item.item}.png`}
-																					alt={item.item}
-																				/>
-																			{/each}
-																			{' -> '}
-																			{#each trade.gives as item}
-																				<img
-																					class="size-4 [image-rendeering:pixelated]"
-																					src={`/assets/items/${item.item}.png`}
-																					alt={item.item}
-																				/>
-																			{/each}
-																			{#if subField.state.value === String(tradeIndex)}
-																				<CheckIcon class="ml-2 size-4 shrink-0 opacity-50" />
-																			{/if}
-																		</Command.Item>
-																	{/each}
-																</Command.Group>
+																{#each levels as level}
+																	<Command.Group heading={level.label}>
+																		{#each getLevelTrades(level.level) as trade}
+																			<Command.Item
+																				value={trade.id}
+																				onSelect={() => {
+																					subField.handleChange(trade.id);
+																					closeAndFocusTrigger();
+																				}}
+																			>
+																				{#each trade.wants as item}
+																					{@const detail = itemDetails[item.item]}
+																					<img
+																						class="size-6 object-contain [image-rendeering:pixelated]"
+																						src={item.enchanted && detail.enchantable
+																							? detail.enchantedImage
+																							: detail.image}
+																						alt={item.item}
+																					/>
+																				{/each}
+																				{' -> '}
+																				{#each trade.gives as item}
+																					{@const detail = itemDetails[item.item]}
+																					<img
+																						class="size-6 object-contain [image-rendeering:pixelated]"
+																						src={item.enchanted && detail.enchantable
+																							? detail.enchantedImage
+																							: detail.image}
+																						alt={item.item}
+																					/>
+																				{/each}
+																				{#if subField.state.value === trade.id}
+																					<CheckIcon class="ml-2 size-4 shrink-0 opacity-50" />
+																				{/if}
+																			</Command.Item>
+																		{/each}
+																	</Command.Group>
+																{/each}
 															</Command.List>
 														</Command.Root>
 													</Popover.Content>

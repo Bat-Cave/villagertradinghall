@@ -9,6 +9,7 @@ type VillagerTradeItem = {
 type VillagerTrade = {
 	id: string;
 	level: 'novice' | 'apprentice' | 'journeyman' | 'expert' | 'master';
+	probability: number;
 	wants: Array<VillagerTradeItem>;
 	gives: Array<VillagerTradeItem>;
 };
@@ -30,11 +31,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-armorer.png',
 		possibleTrades: [
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'coal',
-						amount: 1
+						amount: 15
 					}
 				],
 				gives: [
@@ -46,11 +48,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-novice-coal-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
@@ -62,11 +65,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-novice-emerald-for-iron-helmet'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 9
 					}
 				],
 				gives: [
@@ -78,11 +82,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-novice-emerald-for-iron-chestplate'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 7
 					}
 				],
 				gives: [
@@ -94,11 +99,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-novice-emerald-for-iron-leggings'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -110,11 +116,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-novice-emerald-for-iron-boots'
 			},
 			{
+				probability: 0.5,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'iron-ingot',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -126,11 +133,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-apprentice-iron-ingot-for-emerald'
 			},
 			{
+				probability: 0.5,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 36
 					}
 				],
 				gives: [
@@ -142,11 +150,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-apprentice-emerald-for-bell'
 			},
 			{
+				probability: 0.5,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -158,6 +167,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-apprentice-emerald-for-chainmail-leggings'
 			},
 			{
+				probability: 0.5,
 				level: 'apprentice',
 				wants: [
 					{
@@ -174,6 +184,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-apprentice-emerald-for-chainmail-boots'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
@@ -190,6 +201,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-journeyman-lava-bucket-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
@@ -206,6 +218,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-journeyman-diamond-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
@@ -222,11 +235,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-journeyman-emerald-for-chainmail-helmet'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -238,11 +252,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-journeyman-emerald-for-chainmail-chestplate'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
@@ -254,11 +269,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-journeyman-emerald-for-shield'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 26
 					}
 				],
 				gives: [
@@ -271,11 +287,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-expert-emerald-for-enchanted-diamond-leggings'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 20
 					}
 				],
 				gives: [
@@ -288,11 +305,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-expert-emerald-for-enchanted-diamond-boots'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 20
 					}
 				],
 				gives: [
@@ -305,11 +323,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'armorer-master-emerald-for-enchanted-diamond-helmet'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 28
 					}
 				],
 				gives: [
@@ -328,11 +347,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-butcher.png',
 		possibleTrades: [
 			{
+				probability: 0.5,
 				level: 'novice',
 				wants: [
 					{
 						item: 'raw-chicken',
-						amount: 1
+						amount: 14
 					}
 				],
 				gives: [
@@ -344,11 +364,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'butcher-novice-raw-chicken-for-emerald'
 			},
 			{
+				probability: 0.5,
 				level: 'novice',
 				wants: [
 					{
 						item: 'raw-rabbit',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -360,11 +381,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'butcher-novice-raw-rabbit-for-emerald'
 			},
 			{
+				probability: 0.5,
 				level: 'novice',
 				wants: [
 					{
 						item: 'raw-porkchop',
-						amount: 1
+						amount: 7
 					}
 				],
 				gives: [
@@ -376,6 +398,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'butcher-novice-raw-porkchop-for-emerald'
 			},
 			{
+				probability: 0.5,
 				level: 'novice',
 				wants: [
 					{
@@ -392,11 +415,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'butcher-novice-emerald-for-rabbit-stew'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'coal',
-						amount: 1
+						amount: 15
 					}
 				],
 				gives: [
@@ -408,6 +432,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'butcher-apprentice-coal-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
@@ -418,12 +443,13 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'cooked-chicken',
-						amount: 1
+						amount: 8
 					}
 				],
 				id: 'butcher-apprentice-emerald-for-cooked-chicken'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
@@ -434,17 +460,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'cooked-porkchop',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'butcher-apprentice-emerald-for-cooked-porkchop'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'raw-beef',
-						amount: 1
+						amount: 10
 					}
 				],
 				gives: [
@@ -456,11 +483,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'butcher-journeyman-raw-beef-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'raw-mutton',
-						amount: 1
+						amount: 7
 					}
 				],
 				gives: [
@@ -472,11 +500,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'butcher-journeyman-raw-mutton-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'dried-kelp-block',
-						amount: 1
+						amount: 10
 					}
 				],
 				gives: [
@@ -488,11 +517,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'butcher-expert-dried-kelp-block-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'sweet-berries',
-						amount: 1
+						amount: 10
 					}
 				],
 				gives: [
@@ -510,11 +540,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-cartographer.png',
 		possibleTrades: [
 			{
+				probability: 1,
 				level: 'novice',
 				wants: [
 					{
 						item: 'paper',
-						amount: 1
+						amount: 24
 					}
 				],
 				gives: [
@@ -526,11 +557,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-novice-paper-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 7
 					}
 				],
 				gives: [
@@ -542,11 +574,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-novice-emerald-for-empty-map'
 			},
 			{
+				probability: 0.5,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'glass-pane',
-						amount: 1
+						amount: 11
 					}
 				],
 				gives: [
@@ -558,11 +591,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-apprentice-glass-pane-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 8
 					},
 					{
 						item: 'compass',
@@ -578,6 +612,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-apprentice-emerald-and-compass-for-explorer-map'
 			},
 			{
+				probability: 0.67,
 				level: 'journeyman',
 				wants: [
 					{
@@ -594,11 +629,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-journeyman-compass-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 13
 					},
 					{
 						item: 'compass',
@@ -614,11 +650,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-journeyman-emerald-and-compass-for-ocean-explorer-map'
 			},
 			{
+				probability: 0.67,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 12
 					},
 					{
 						item: 'compass',
@@ -634,11 +671,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-journeyman-emerald-and-compass-for-trial-explorer-map'
 			},
 			{
+				probability: 0.12,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 7
 					}
 				],
 				gives: [
@@ -650,11 +688,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-item-frame'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -666,11 +705,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-white-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -682,11 +722,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-light-gray-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -698,11 +739,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-gray-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -714,11 +756,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-black-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -730,11 +773,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-brown-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -746,11 +790,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-red-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -762,11 +807,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-orange-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -778,11 +824,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-yellow-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -794,11 +841,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-lime-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -810,11 +858,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-green-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -826,11 +875,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-cyan-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -842,11 +892,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-light-blue-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -858,11 +909,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-blue-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -874,11 +926,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-purple-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -890,11 +943,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-magenta-banner'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -906,11 +960,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-expert-emerald-for-pink-banner'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 8
 					}
 				],
 				gives: [
@@ -922,11 +977,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cartographer-master-emerald-for-globe-banner-pattern'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 14
 					},
 					{
 						item: 'compass',
@@ -948,11 +1004,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-cleric.png',
 		possibleTrades: [
 			{
+				probability: 1,
 				level: 'novice',
 				wants: [
 					{
 						item: 'rotten-flesh',
-						amount: 1
+						amount: 32
 					}
 				],
 				gives: [
@@ -964,6 +1021,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cleric-novice-rotten-flesh-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'novice',
 				wants: [
 					{
@@ -974,17 +1032,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'redstone-dust',
-						amount: 1
+						amount: 2
 					}
 				],
 				id: 'cleric-novice-emerald-for-redstone-dust'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'gold-ingot',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -996,6 +1055,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cleric-apprentice-gold-ingot-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
@@ -1012,11 +1072,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cleric-apprentice-emerald-for-lapis-lazuli'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'rabbits-foot',
-						amount: 1
+						amount: 2
 					}
 				],
 				gives: [
@@ -1028,11 +1089,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cleric-journeyman-rabbits-foot-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -1044,11 +1106,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cleric-journeyman-emerald-for-glowstone'
 			},
 			{
+				probability: 0.67,
 				level: 'expert',
 				wants: [
 					{
 						item: 'turtle-scute',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -1060,11 +1123,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cleric-expert-turtle-scute-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'expert',
 				wants: [
 					{
 						item: 'glass-bottle',
-						amount: 1
+						amount: 9
 					}
 				],
 				gives: [
@@ -1076,11 +1140,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cleric-expert-glass-bottle-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
@@ -1092,11 +1157,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cleric-expert-emerald-for-ender-pearl'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'nether-wart',
-						amount: 1
+						amount: 22
 					}
 				],
 				gives: [
@@ -1108,11 +1174,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'cleric-master-nether-wart-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -1130,11 +1197,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-farmer.png',
 		possibleTrades: [
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'wheat',
-						amount: 1
+						amount: 20
 					}
 				],
 				gives: [
@@ -1146,11 +1214,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'farmer-novice-wheat-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'potato',
-						amount: 1
+						amount: 26
 					}
 				],
 				gives: [
@@ -1162,11 +1231,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'farmer-novice-potato-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'carrot',
-						amount: 1
+						amount: 22
 					}
 				],
 				gives: [
@@ -1178,11 +1248,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'farmer-novice-carrot-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'beetroot',
-						amount: 1
+						amount: 15
 					}
 				],
 				gives: [
@@ -1194,6 +1265,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'farmer-novice-beetroot-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
@@ -1204,17 +1276,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'bread',
-						amount: 1
+						amount: 6
 					}
 				],
 				id: 'farmer-novice-emerald-for-bread'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'pumpkin',
-						amount: 1
+						amount: 6
 					}
 				],
 				gives: [
@@ -1226,6 +1299,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'farmer-apprentice-pumpkin-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
@@ -1236,12 +1310,13 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'pumpkin-pie',
-						amount: 1
+						amount: 4
 					}
 				],
 				id: 'farmer-apprentice-emerald-for-pumpkin-pie'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
@@ -1252,17 +1327,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'apple',
-						amount: 1
+						amount: 4
 					}
 				],
 				id: 'farmer-apprentice-emerald-for-apple'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'melon',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -1274,22 +1350,25 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'farmer-journeyman-melon-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
 					{
 						item: 'cookie',
-						amount: 1
+						amount: 18
 					}
 				],
 				id: 'farmer-journeyman-emerald-for-cookie'
 			},
 			{
+				// I don't know if this probability is actually correct. See https://minecraft.wiki/w/Farmer#cite_note-1
+				probability: 0.86,
 				level: 'expert',
 				wants: [
 					{
@@ -1306,6 +1385,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'farmer-expert-emerald-for-suspicious-stew'
 			},
 			{
+				probability: 0.14,
 				level: 'expert',
 				wants: [
 					{
@@ -1322,33 +1402,35 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'farmer-expert-emerald-for-cake'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
 					{
 						item: 'golden-carrot',
-						amount: 1
+						amount: 3
 					}
 				],
 				id: 'farmer-master-emerald-for-golden-carrot'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
 					{
 						item: 'glistering-melon-slice',
-						amount: 1
+						amount: 3
 					}
 				],
 				id: 'farmer-master-emerald-for-glistering-melon-slice'
@@ -1360,11 +1442,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-fisherman.png',
 		possibleTrades: [
 			{
+				probability: 0.5,
 				level: 'novice',
 				wants: [
 					{
 						item: 'string',
-						amount: 1
+						amount: 20
 					}
 				],
 				gives: [
@@ -1376,11 +1459,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fisherman-novice-string-for-emerald'
 			},
 			{
+				probability: 0.5,
 				level: 'novice',
 				wants: [
 					{
 						item: 'coal',
-						amount: 1
+						amount: 10
 					}
 				],
 				gives: [
@@ -1392,11 +1476,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fisherman-novice-coal-for-emerald'
 			},
 			{
+				probability: 0.5,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -1408,11 +1493,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fisherman-novice-emerald-for-bucket-of-cod'
 			},
 			{
+				probability: 0.5,
 				level: 'novice',
 				wants: [
 					{
 						item: 'raw-cod',
-						amount: 1
+						amount: 6
 					},
 					{
 						item: 'emerald',
@@ -1422,17 +1508,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'cooked-cod',
-						amount: 1
+						amount: 6
 					}
 				],
 				id: 'fisherman-novice-raw-cod-and-emerald-for-cooked-cod'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'raw-cod',
-						amount: 1
+						amount: 15
 					}
 				],
 				gives: [
@@ -1444,11 +1531,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fisherman-apprentice-raw-cod-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					}
 				],
 				gives: [
@@ -1460,11 +1548,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fisherman-apprentice-emerald-for-campfire'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'raw-salmon',
-						amount: 1
+						amount: 6
 					},
 					{
 						item: 'emerald',
@@ -1474,17 +1563,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'cooked-salmon',
-						amount: 1
+						amount: 6
 					}
 				],
 				id: 'fisherman-apprentice-raw-salmon-and-emerald-for-cooked-salmon'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'raw-salmon',
-						amount: 1
+						amount: 13
 					}
 				],
 				gives: [
@@ -1496,11 +1586,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fisherman-journeyman-raw-salmon-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 15
 					}
 				],
 				gives: [
@@ -1513,11 +1604,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fisherman-journeyman-emerald-for-enchanted-fishing-rod'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'tropical-fish',
-						amount: 1
+						amount: 6
 					}
 				],
 				gives: [
@@ -1529,11 +1621,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fisherman-expert-tropical-fish-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'pufferfish',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -1545,6 +1638,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fisherman-master-pufferfish-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
@@ -1567,11 +1661,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-fletcher.png',
 		possibleTrades: [
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'stick',
-						amount: 1
+						amount: 32
 					}
 				],
 				gives: [
@@ -1583,6 +1678,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fletcher-novice-stick-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
@@ -1593,17 +1689,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 16
 					}
 				],
 				id: 'fletcher-novice-emerald-for-arrow'
 			},
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'gravel',
-						amount: 1
+						amount: 10
 					},
 					{
 						item: 'emerald',
@@ -1613,17 +1710,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'flint',
-						amount: 1
+						amount: 10
 					}
 				],
 				id: 'fletcher-novice-gravel-and-emerald-for-flint'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'flint',
-						amount: 1
+						amount: 26
 					}
 				],
 				gives: [
@@ -1635,11 +1733,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fletcher-apprentice-flint-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					}
 				],
 				gives: [
@@ -1651,11 +1750,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fletcher-apprentice-emerald-for-bow'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'string',
-						amount: 1
+						amount: 14
 					}
 				],
 				gives: [
@@ -1667,11 +1767,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fletcher-journeyman-string-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -1683,11 +1784,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fletcher-journeyman-emerald-for-crossbow'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'feather',
-						amount: 1
+						amount: 24
 					}
 				],
 				gives: [
@@ -1699,11 +1801,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fletcher-expert-feather-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 14
 					}
 				],
 				gives: [
@@ -1716,11 +1819,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fletcher-expert-emerald-for-enchanted-bow'
 			},
 			{
+				probability: 0.67,
 				level: 'master',
 				wants: [
 					{
 						item: 'tripwire-hook',
-						amount: 1
+						amount: 8
 					}
 				],
 				gives: [
@@ -1732,11 +1836,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fletcher-master-tripwire-hook-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 15
 					}
 				],
 				gives: [
@@ -1749,281 +1854,274 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'fletcher-master-emerald-for-enchanted-crossbow'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-weakness',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-weakness'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
-					}
-				],
-				gives: [
-					{
-						item: 'tipped-arrow-strength',
-						amount: 1
-					}
-				],
-				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-strength'
-			},
-			{
-				level: 'expert',
-				wants: [
-					{
-						item: 'emerald',
-						amount: 1
-					},
-					{
-						item: 'arrow',
-						amount: 1
-					}
-				],
-				gives: [
-					{
-						item: 'tipped-arrow-regeneration',
-						amount: 1
-					}
-				],
-				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-regeneration'
-			},
-			{
-				level: 'expert',
-				wants: [
-					{
-						item: 'emerald',
-						amount: 1
-					},
-					{
-						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-poison',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-poison'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
+					}
+				],
+				gives: [
+					{
+						item: 'tipped-arrow-regeneration',
+						amount: 5
+					}
+				],
+				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-regeneration'
+			},
+			{
+				probability: 0.67,
+				level: 'master',
+				wants: [
+					{
+						item: 'emerald',
+						amount: 2
+					},
+					{
+						item: 'arrow',
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-harming',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-harming'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-healing',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-healing'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-water-breathing',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-water-breathing'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-turtle-master',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-turtle-master'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-slowness',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-slowness'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-swiftness',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-swiftness'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-fire-resistance',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-fire-resistance'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-leaping',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-leaping'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-invisibility',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-invisibility'
 			},
 			{
-				level: 'expert',
+				probability: 0.67,
+				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					},
 					{
 						item: 'arrow',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
 					{
 						item: 'tipped-arrow-night-vision',
-						amount: 1
+						amount: 5
 					}
 				],
 				id: 'fletcher-expert-emerald-and-arrow-for-tipped-arrow-night-vision'
@@ -2035,11 +2133,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-leatherworker.png',
 		possibleTrades: [
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'leather',
-						amount: 1
+						amount: 6
 					}
 				],
 				gives: [
@@ -2051,11 +2150,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-novice-leather-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -2067,11 +2167,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-novice-emerald-for-leather-pants'
 			},
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 7
 					}
 				],
 				gives: [
@@ -2083,11 +2184,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-novice-emerald-for-leather-tunic'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'flint',
-						amount: 1
+						amount: 26
 					}
 				],
 				gives: [
@@ -2099,11 +2201,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-apprentice-flint-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
@@ -2115,11 +2218,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-apprentice-emerald-for-leather-cap'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -2131,11 +2235,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-apprentice-emerald-for-leather-boots'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'rabbit-hide',
-						amount: 1
+						amount: 9
 					}
 				],
 				gives: [
@@ -2147,11 +2252,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-journeyman-rabbit-hide-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 7
 					}
 				],
 				gives: [
@@ -2163,11 +2269,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-journeyman-emerald-for-leather-tunic'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'turtle-scute',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -2179,11 +2286,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-expert-turtle-scute-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 6
 					}
 				],
 				gives: [
@@ -2195,11 +2303,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-expert-emerald-for-leather-horse-armor'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
@@ -2211,11 +2320,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'leatherworker-master-emerald-for-leather-cap'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 6
 					}
 				],
 				gives: [
@@ -2233,11 +2343,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-librarian.png',
 		possibleTrades: [
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'paper',
-						amount: 1
+						amount: 24
 					}
 				],
 				gives: [
@@ -2249,11 +2360,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-novice-paper-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 9
 					}
 				],
 				gives: [
@@ -2265,11 +2377,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-novice-emerald-for-bookshelf'
 			},
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 35
 					},
 					{
 						item: 'book',
@@ -2286,11 +2399,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-novice-emerald-and-book-for-enchanted-book'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'book',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -2302,6 +2416,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-apprentice-book-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
@@ -2318,11 +2433,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-apprentice-emerald-for-lantern'
 			},
 			{
+				probability: 0.67,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 35
 					},
 					{
 						item: 'book',
@@ -2339,11 +2455,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-apprentice-emerald-and-book-for-enchanted-book'
 			},
 			{
+				probability: 0.67,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'ink-sac',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
@@ -2355,6 +2472,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-journeyman-ink-sac-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'journeyman',
 				wants: [
 					{
@@ -2365,17 +2483,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'glass',
-						amount: 1
+						amount: 4
 					}
 				],
 				id: 'librarian-journeyman-emerald-for-glass'
 			},
 			{
+				probability: 0.67,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 35
 					},
 					{
 						item: 'book',
@@ -2392,6 +2511,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-journeyman-emerald-and-book-for-enchanted-book'
 			},
 			{
+				probability: 0.5,
 				level: 'expert',
 				wants: [
 					{
@@ -2408,11 +2528,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-expert-book-and-quill-for-emerald'
 			},
 			{
+				probability: 0.5,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -2424,11 +2545,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-expert-emerald-for-compass'
 			},
 			{
+				probability: 0.5,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 5
 					}
 				],
 				gives: [
@@ -2440,11 +2562,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-expert-emerald-for-clock'
 			},
 			{
+				probability: 0.5,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 35
 					},
 					{
 						item: 'book',
@@ -2461,11 +2584,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'librarian-expert-emerald-and-book-for-enchanted-book'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 20
 					}
 				],
 				gives: [
@@ -2483,11 +2607,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-mason.png',
 		possibleTrades: [
 			{
+				probability: 1,
 				level: 'novice',
 				wants: [
 					{
 						item: 'clay-ball',
-						amount: 1
+						amount: 10
 					}
 				],
 				gives: [
@@ -2499,6 +2624,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-novice-clay-ball-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'novice',
 				wants: [
 					{
@@ -2509,17 +2635,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'brick',
-						amount: 1
+						amount: 10
 					}
 				],
 				id: 'mason-novice-emerald-for-brick'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'stone',
-						amount: 1
+						amount: 20
 					}
 				],
 				gives: [
@@ -2531,6 +2658,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-apprentice-stone-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
@@ -2541,17 +2669,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'chiseled-stone-bricks',
-						amount: 1
+						amount: 4
 					}
 				],
 				id: 'mason-apprentice-emerald-for-chiseled-stone-bricks'
 			},
 			{
+				probability: 0.29,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'granite',
-						amount: 1
+						amount: 16
 					}
 				],
 				gives: [
@@ -2563,11 +2692,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-journeyman-granite-for-emerald'
 			},
 			{
+				probability: 0.29,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'andesite',
-						amount: 1
+						amount: 16
 					}
 				],
 				gives: [
@@ -2579,11 +2709,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-journeyman-andesite-for-emerald'
 			},
 			{
+				probability: 0.29,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'diorite',
-						amount: 1
+						amount: 16
 					}
 				],
 				gives: [
@@ -2595,6 +2726,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-journeyman-diorite-for-emerald'
 			},
 			{
+				probability: 0.29,
 				level: 'journeyman',
 				wants: [
 					{
@@ -2605,12 +2737,13 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'dripstone-block',
-						amount: 1
+						amount: 4
 					}
 				],
 				id: 'mason-journeyman-emerald-for-dripstone-block'
 			},
 			{
+				probability: 0.29,
 				level: 'journeyman',
 				wants: [
 					{
@@ -2621,12 +2754,13 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'polished-andesite',
-						amount: 1
+						amount: 4
 					}
 				],
 				id: 'mason-journeyman-emerald-for-polished-andesite'
 			},
 			{
+				probability: 0.29,
 				level: 'journeyman',
 				wants: [
 					{
@@ -2637,12 +2771,13 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'polished-diorite',
-						amount: 1
+						amount: 4
 					}
 				],
 				id: 'mason-journeyman-emerald-for-polished-diorite'
 			},
 			{
+				probability: 0.29,
 				level: 'journeyman',
 				wants: [
 					{
@@ -2653,17 +2788,18 @@ export const professions: Record<string, VillagerProfession> = {
 				gives: [
 					{
 						item: 'polished-granite',
-						amount: 1
+						amount: 4
 					}
 				],
 				id: 'mason-journeyman-emerald-for-polished-granite'
 			},
 			{
+				probability: 0.06,
 				level: 'expert',
 				wants: [
 					{
-						item: 'nether-quarts',
-						amount: 1
+						item: 'nether-quartz',
+						amount: 12
 					}
 				],
 				gives: [
@@ -2675,6 +2811,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-nether-quarts-for-emerald'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2691,6 +2828,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-white-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2707,6 +2845,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-light-gray-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2723,6 +2862,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-gray-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2739,6 +2879,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-black-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2755,6 +2896,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-brown-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2771,6 +2913,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-red-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2787,6 +2930,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-orange-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2803,6 +2947,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-yellow-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2819,6 +2964,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-lime-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2835,6 +2981,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-green-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2851,6 +2998,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-cyan-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2867,6 +3015,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-light-blue-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2883,6 +3032,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-blue-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2899,6 +3049,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-purple-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2915,6 +3066,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-magenta-terracotta'
 			},
 			{
+				probability: 0.74,
 				level: 'expert',
 				wants: [
 					{
@@ -2931,6 +3083,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-pink-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -2947,6 +3100,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-white-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -2963,6 +3117,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-light-gray-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -2979,6 +3134,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-gray-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -2995,6 +3151,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-black-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3011,6 +3168,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-brown-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3027,6 +3185,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-red-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3043,6 +3202,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-orange-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3059,6 +3219,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-yellow-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3075,6 +3236,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-lime-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3091,6 +3253,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-green-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3107,6 +3270,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-cyan-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3123,6 +3287,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-light-blue-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3139,6 +3304,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-blue-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3155,6 +3321,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-purple-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3171,6 +3338,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-magenta-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -3187,6 +3355,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-expert-emerald-for-pink-glazed-terracotta'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
@@ -3203,6 +3372,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'mason-master-emerald-for-quartz-pillar'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
@@ -3225,11 +3395,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-shepherd.png',
 		possibleTrades: [
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'white-wool',
-						amount: 1
+						amount: 18
 					}
 				],
 				gives: [
@@ -3241,11 +3412,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-novice-white-wool-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'brown-wool',
-						amount: 1
+						amount: 18
 					}
 				],
 				gives: [
@@ -3257,11 +3429,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-novice-brown-wool-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'black-wool',
-						amount: 1
+						amount: 18
 					}
 				],
 				gives: [
@@ -3273,11 +3446,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-novice-black-wool-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'gray-wool',
-						amount: 1
+						amount: 18
 					}
 				],
 				gives: [
@@ -3289,11 +3463,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-novice-gray-wool-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					}
 				],
 				gives: [
@@ -3305,11 +3480,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-novice-emerald-for-shears'
 			},
 			{
+				probability: 0.05,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'white-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3321,11 +3497,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-white-dye-for-emerald'
 			},
 			{
+				probability: 0.05,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'gray-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3337,11 +3514,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-gray-dye-for-emerald'
 			},
 			{
+				probability: 0.05,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'black-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3353,11 +3531,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-black-dye-for-emerald'
 			},
 			{
+				probability: 0.05,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'light-blue-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3369,11 +3548,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-light-blue-dye-for-emerald'
 			},
 			{
+				probability: 0.05,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'lime-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3385,6 +3565,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-lime-dye-for-emerald'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3401,6 +3582,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-white-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3417,6 +3599,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-light-gray-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3433,6 +3616,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-gray-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3449,6 +3633,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-black-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3465,6 +3650,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-brown-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3481,6 +3667,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-red-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3497,6 +3684,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-orange-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3513,6 +3701,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-yellow-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3529,6 +3718,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-lime-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3545,6 +3735,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-green-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3561,6 +3752,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-cyan-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3577,6 +3769,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-light-blue-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3593,6 +3786,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-blue-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3609,6 +3803,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-purple-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3625,6 +3820,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-magenta-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3641,6 +3837,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-pink-wool'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3657,6 +3854,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-white-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3673,6 +3871,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-light-gray-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3689,6 +3888,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-gray-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3705,6 +3905,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-black-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3721,6 +3922,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-brown-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3737,6 +3939,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-red-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3753,6 +3956,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-orange-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3769,6 +3973,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-yellow-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3785,6 +3990,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-lime-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3801,6 +4007,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-green-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3817,6 +4024,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-cyan-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3833,6 +4041,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-light-blue-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3849,6 +4058,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-blue-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3865,6 +4075,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-purple-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3881,6 +4092,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-magenta-carpet'
 			},
 			{
+				probability: 0.68,
 				level: 'apprentice',
 				wants: [
 					{
@@ -3897,11 +4109,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-apprentice-emerald-for-pink-carpet'
 			},
 			{
+				probability: 0.1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'yellow-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3913,11 +4126,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-yellow-dye-for-emerald'
 			},
 			{
+				probability: 0.1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'light-gray-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3929,11 +4143,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-light-gray-dye-for-emerald'
 			},
 			{
+				probability: 0.1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'orange-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3945,11 +4160,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-orange-dye-for-emerald'
 			},
 			{
+				probability: 0.1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'red-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3961,11 +4177,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-red-dye-for-emerald'
 			},
 			{
+				probability: 0.1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'pink-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -3977,6 +4194,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-pink-dye-for-emerald'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -3993,6 +4211,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-white-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4009,6 +4228,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-light-gray-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4025,6 +4245,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-gray-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4041,6 +4262,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-black-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4057,6 +4279,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-brown-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4073,6 +4296,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-red-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4089,6 +4313,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-orange-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4105,6 +4330,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-yellow-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4121,6 +4347,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-lime-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4137,6 +4364,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-green-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4153,6 +4381,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-cyan-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4169,6 +4398,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-light-blue-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4185,6 +4415,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-blue-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4201,6 +4432,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-purple-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4217,6 +4449,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-magenta-bed'
 			},
 			{
+				probability: 0.95,
 				level: 'journeyman',
 				wants: [
 					{
@@ -4233,11 +4466,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-journeyman-emerald-for-pink-bed'
 			},
 			{
+				probability: 0.09,
 				level: 'expert',
 				wants: [
 					{
 						item: 'brown-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -4249,11 +4483,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-brown-dye-for-emerald'
 			},
 			{
+				probability: 0.09,
 				level: 'expert',
 				wants: [
 					{
 						item: 'purple-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -4265,27 +4500,29 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-purple-dye-for-emerald'
 			},
 			{
+				probability: 0.09,
 				level: 'expert',
 				wants: [
 					{
 						item: 'blue-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 12
 					}
 				],
 				id: 'shepherd-expert-blue-dye-for-emerald'
 			},
 			{
+				probability: 0.09,
 				level: 'expert',
 				wants: [
 					{
 						item: 'green-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -4297,11 +4534,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-green-dye-for-emerald'
 			},
 			{
+				probability: 0.09,
 				level: 'expert',
 				wants: [
 					{
 						item: 'magenta-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -4313,11 +4551,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-magenta-dye-for-emerald'
 			},
 			{
+				probability: 0.09,
 				level: 'expert',
 				wants: [
 					{
 						item: 'cyan-dye',
-						amount: 1
+						amount: 12
 					}
 				],
 				gives: [
@@ -4329,11 +4568,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-cyan-dye-for-emerald'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4345,11 +4585,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-white-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4361,11 +4602,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-light-gray-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4377,11 +4619,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-gray-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4393,11 +4636,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-black-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4409,11 +4653,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-brown-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4425,11 +4670,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-red-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4441,11 +4687,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-orange-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4457,11 +4704,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-yellow-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4473,11 +4721,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-lime-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4489,11 +4738,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-green-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4505,11 +4755,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-cyan-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4521,11 +4772,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-light-blue-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4537,11 +4789,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-blue-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4553,11 +4806,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-purple-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4569,11 +4823,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-magenta-banner'
 			},
 			{
+				probability: 0.94,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4585,17 +4840,18 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'shepherd-expert-emerald-for-pink-banner'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 2
 					}
 				],
 				gives: [
 					{
 						item: 'painting',
-						amount: 1
+						amount: 3
 					}
 				],
 				id: 'shepherd-master-emerald-for-painting'
@@ -4607,11 +4863,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-toolsmith.png',
 		possibleTrades: [
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
 						item: 'coal',
-						amount: 1
+						amount: 15
 					}
 				],
 				gives: [
@@ -4623,6 +4880,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-novice-coal-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
@@ -4639,6 +4897,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-novice-emerald-for-stone-axe'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
@@ -4655,6 +4914,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-novice-emerald-for-stone-shovel'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
@@ -4671,6 +4931,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-novice-emerald-for-stone-pickaxe'
 			},
 			{
+				probability: 0.4,
 				level: 'novice',
 				wants: [
 					{
@@ -4687,11 +4948,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-novice-emerald-for-stone-hoe'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'iron-ingot',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -4703,11 +4965,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-apprentice-iron-ingot-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 36
 					}
 				],
 				gives: [
@@ -4719,11 +4982,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-apprentice-emerald-for-bell'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'flint',
-						amount: 1
+						amount: 30
 					}
 				],
 				gives: [
@@ -4735,11 +4999,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-journeyman-flint-for-emerald'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 13
 					}
 				],
 				gives: [
@@ -4752,11 +5017,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-journeyman-emerald-for-enchanted-iron-axe'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 14
 					}
 				],
 				gives: [
@@ -4769,11 +5035,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-journeyman-emerald-for-enchanted-iron-shovel'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 15
 					}
 				],
 				gives: [
@@ -4786,11 +5053,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-journeyman-emerald-for-enchanted-iron-pickaxe'
 			},
 			{
+				probability: 0.4,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -4802,6 +5070,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-journeyman-emerald-for-diamond-hoe'
 			},
 			{
+				probability: 0.67,
 				level: 'expert',
 				wants: [
 					{
@@ -4818,11 +5087,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-expert-diamond-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 24
 					}
 				],
 				gives: [
@@ -4835,11 +5105,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-expert-emerald-for-enchanted-diamond-axe'
 			},
 			{
+				probability: 0.67,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 17
 					}
 				],
 				gives: [
@@ -4852,11 +5123,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'toolsmith-expert-emerald-for-enchanted-diamond-shovel'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 25
 					}
 				],
 				gives: [
@@ -4875,11 +5147,12 @@ export const professions: Record<string, VillagerProfession> = {
 		image: '/assets/villagers/plains-weaponsmith.png',
 		possibleTrades: [
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'coal',
-						amount: 1
+						amount: 15
 					}
 				],
 				gives: [
@@ -4891,11 +5164,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'weaponsmith-novice-coal-for-emerald'
 			},
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 3
 					}
 				],
 				gives: [
@@ -4907,11 +5181,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'weaponsmith-novice-emerald-for-iron-axe'
 			},
 			{
+				probability: 0.67,
 				level: 'novice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 14
 					}
 				],
 				gives: [
@@ -4924,11 +5199,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'weaponsmith-novice-emerald-for-enchanted-iron-sword'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'iron-ingot',
-						amount: 1
+						amount: 4
 					}
 				],
 				gives: [
@@ -4940,11 +5216,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'weaponsmith-apprentice-iron-ingot-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'apprentice',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 36
 					}
 				],
 				gives: [
@@ -4956,11 +5233,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'weaponsmith-apprentice-emerald-for-bell'
 			},
 			{
+				probability: 1,
 				level: 'journeyman',
 				wants: [
 					{
 						item: 'flint',
-						amount: 1
+						amount: 24
 					}
 				],
 				gives: [
@@ -4972,6 +5250,7 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'weaponsmith-journeyman-flint-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
@@ -4988,11 +5267,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'weaponsmith-expert-diamond-for-emerald'
 			},
 			{
+				probability: 1,
 				level: 'expert',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 24
 					}
 				],
 				gives: [
@@ -5005,11 +5285,12 @@ export const professions: Record<string, VillagerProfession> = {
 				id: 'weaponsmith-expert-emerald-for-enchanted-diamond-axe'
 			},
 			{
+				probability: 1,
 				level: 'master',
 				wants: [
 					{
 						item: 'emerald',
-						amount: 1
+						amount: 20
 					}
 				],
 				gives: [

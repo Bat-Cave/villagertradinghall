@@ -189,7 +189,7 @@ export const items = [
 	'magenta-wool',
 	'melon',
 	'name-tag',
-	'nether-quarts',
+	'nether-quartz',
 	'nether-wart',
 	'ocean-explorer-map',
 	'orange-banner',
@@ -329,7 +329,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'black-banner': {
 		key: 'black-banner',
 		name: 'Black Banner',
-		image: '/assets/items/black-banner.png',
+		image: '/assets/items/black-banner.gif',
 		enchantable: false
 	},
 	'black-bed': {
@@ -377,7 +377,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'blue-banner': {
 		key: 'blue-banner',
 		name: 'Blue Banner',
-		image: '/assets/items/blue-banner.png',
+		image: '/assets/items/blue-banner.gif',
 		enchantable: false
 	},
 	'blue-bed': {
@@ -426,7 +426,8 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 		key: 'book',
 		name: 'Book',
 		image: '/assets/items/book.png',
-		enchantable: false
+		enchantedImage: '/assets/items/book-enchanted.gif',
+		enchantable: true
 	},
 	'book-and-quill': {
 		key: 'book-and-quill',
@@ -468,7 +469,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'brown-banner': {
 		key: 'brown-banner',
 		name: 'Brown Banner',
-		image: '/assets/items/brown-banner.png',
+		image: '/assets/items/brown-banner.gif',
 		enchantable: false
 	},
 	'brown-bed': {
@@ -529,7 +530,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	campfire: {
 		key: 'campfire',
 		name: 'Campfire',
-		image: '/assets/items/campfire.png',
+		image: '/assets/items/campfire.gif',
 		enchantable: false
 	},
 	carrot: {
@@ -595,7 +596,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	clock: {
 		key: 'clock',
 		name: 'Clock',
-		image: '/assets/items/clock.png',
+		image: '/assets/items/clock.gif',
 		enchantable: false
 	},
 	coal: {
@@ -607,7 +608,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	compass: {
 		key: 'compass',
 		name: 'Compass',
-		image: '/assets/items/compass.png',
+		image: '/assets/items/compass.gif',
 		enchantedImage: '/assets/items/compass-enchanted.gif',
 		enchantable: true
 	},
@@ -651,7 +652,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'cyan-banner': {
 		key: 'cyan-banner',
 		name: 'Cyan Banner',
-		image: '/assets/items/cyan-banner.png',
+		image: '/assets/items/cyan-banner.gif',
 		enchantable: false
 	},
 	'cyan-bed': {
@@ -896,7 +897,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'gray-banner': {
 		key: 'gray-banner',
 		name: 'Gray Banner',
-		image: '/assets/items/gray-banner.png',
+		image: '/assets/items/gray-banner.gif',
 		enchantable: false
 	},
 	'gray-bed': {
@@ -938,7 +939,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'green-banner': {
 		key: 'green-banner',
 		name: 'Green Banner',
-		image: '/assets/items/green-banner.png',
+		image: '/assets/items/green-banner.gif',
 		enchantable: false
 	},
 	'green-bed': {
@@ -1112,7 +1113,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'light-blue-banner': {
 		key: 'light-blue-banner',
 		name: 'Light Blue Banner',
-		image: '/assets/items/light-blue-banner.png',
+		image: '/assets/items/light-blue-banner.gif',
 		enchantable: false
 	},
 	'light-blue-bed': {
@@ -1154,7 +1155,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'light-gray-banner': {
 		key: 'light-gray-banner',
 		name: 'Light Gray Banner',
-		image: '/assets/items/light-gray-banner.png',
+		image: '/assets/items/light-gray-banner.gif',
 		enchantable: false
 	},
 	'light-gray-bed': {
@@ -1196,7 +1197,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'lime-banner': {
 		key: 'lime-banner',
 		name: 'Lime Banner',
-		image: '/assets/items/lime-banner.png',
+		image: '/assets/items/lime-banner.gif',
 		enchantable: false
 	},
 	'lime-bed': {
@@ -1245,7 +1246,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'magenta-banner': {
 		key: 'magenta-banner',
 		name: 'Magenta Banner',
-		image: '/assets/items/magenta-banner.png',
+		image: '/assets/items/magenta-banner.gif',
 		enchantable: false
 	},
 	'magenta-bed': {
@@ -1296,10 +1297,10 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 		image: '/assets/items/name-tag.png',
 		enchantable: false
 	},
-	'nether-quarts': {
-		key: 'nether-quarts',
+	'nether-quartz': {
+		key: 'nether-quartz',
 		name: 'Nether Quarts',
-		image: '/assets/items/nether-quarts.png',
+		image: '/assets/items/nether-quartz.png',
 		enchantable: false
 	},
 	'nether-wart': {
@@ -1317,7 +1318,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'orange-banner': {
 		key: 'orange-banner',
 		name: 'Orange Banner',
-		image: '/assets/items/orange-banner.png',
+		image: '/assets/items/orange-banner.gif',
 		enchantable: false
 	},
 	'orange-bed': {
@@ -1371,7 +1372,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'pink-banner': {
 		key: 'pink-banner',
 		name: 'Pink Banner',
-		image: '/assets/items/pink-banner.png',
+		image: '/assets/items/pink-banner.gif',
 		enchantable: false
 	},
 	'pink-bed': {
@@ -1455,7 +1456,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'purple-banner': {
 		key: 'purple-banner',
 		name: 'Purple Banner',
-		image: '/assets/items/purple-banner.png',
+		image: '/assets/items/purple-banner.gif',
 		enchantable: false
 	},
 	'purple-bed': {
@@ -1563,7 +1564,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'red-banner': {
 		key: 'red-banner',
 		name: 'Red Banner',
-		image: '/assets/items/red-banner.png',
+		image: '/assets/items/red-banner.gif',
 		enchantable: false
 	},
 	'red-bed': {
@@ -1700,85 +1701,85 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	},
 	'tipped-arrow-fire-resistance': {
 		key: 'tipped-arrow-fire-resistance',
-		name: 'Tipped Arrow Fire Resistance',
+		name: 'Arrow of Fire Resistance',
 		image: '/assets/items/tipped-arrow-fire-resistance.png',
 		enchantable: false
 	},
 	'tipped-arrow-harming': {
 		key: 'tipped-arrow-harming',
-		name: 'Tipped Arrow Harming',
+		name: 'Arrow of Harming',
 		image: '/assets/items/tipped-arrow-harming.png',
 		enchantable: false
 	},
 	'tipped-arrow-healing': {
 		key: 'tipped-arrow-healing',
-		name: 'Tipped Arrow Healing',
+		name: 'Arrow of Healing',
 		image: '/assets/items/tipped-arrow-healing.png',
 		enchantable: false
 	},
 	'tipped-arrow-invisibility': {
 		key: 'tipped-arrow-invisibility',
-		name: 'Tipped Arrow Invisibility',
+		name: 'Arrow of Invisibility',
 		image: '/assets/items/tipped-arrow-invisibility.png',
 		enchantable: false
 	},
 	'tipped-arrow-leaping': {
 		key: 'tipped-arrow-leaping',
-		name: 'Tipped Arrow Leaping',
+		name: 'Arrow of Leaping',
 		image: '/assets/items/tipped-arrow-leaping.png',
 		enchantable: false
 	},
 	'tipped-arrow-night-vision': {
 		key: 'tipped-arrow-night-vision',
-		name: 'Tipped Arrow Night Vision',
+		name: 'Arrow of Night Vision',
 		image: '/assets/items/tipped-arrow-night-vision.png',
 		enchantable: false
 	},
 	'tipped-arrow-poison': {
 		key: 'tipped-arrow-poison',
-		name: 'Tipped Arrow Poison',
+		name: 'Arrow of Poison',
 		image: '/assets/items/tipped-arrow-poison.png',
 		enchantable: false
 	},
 	'tipped-arrow-regeneration': {
 		key: 'tipped-arrow-regeneration',
-		name: 'Tipped Arrow Regeneration',
+		name: 'Arrow of Regeneration',
 		image: '/assets/items/tipped-arrow-regeneration.png',
 		enchantable: false
 	},
 	'tipped-arrow-slowness': {
 		key: 'tipped-arrow-slowness',
-		name: 'Tipped Arrow Slowness',
+		name: 'Arrow of Slowness',
 		image: '/assets/items/tipped-arrow-slowness.png',
 		enchantable: false
 	},
 	'tipped-arrow-strength': {
 		key: 'tipped-arrow-strength',
-		name: 'Tipped Arrow Strength',
+		name: 'Arrow of Strength',
 		image: '/assets/items/tipped-arrow-strength.png',
 		enchantable: false
 	},
 	'tipped-arrow-swiftness': {
 		key: 'tipped-arrow-swiftness',
-		name: 'Tipped Arrow Swiftness',
+		name: 'Arrow of Swiftness',
 		image: '/assets/items/tipped-arrow-swiftness.png',
 		enchantable: false
 	},
 	'tipped-arrow-turtle-master': {
 		key: 'tipped-arrow-turtle-master',
-		name: 'Tipped Arrow Turtle Master',
+		name: 'Arrow of the Turtle Master',
 		image: '/assets/items/tipped-arrow-turtle-master.png',
 		enchantable: false
 	},
 	'tipped-arrow-water-breathing': {
 		key: 'tipped-arrow-water-breathing',
-		name: 'Tipped Arrow Water Breathing',
+		name: 'Arrow of Water Breathing',
 		image: '/assets/items/tipped-arrow-water-breathing.png',
 		enchantable: false
 	},
 	'tipped-arrow-weakness': {
 		key: 'tipped-arrow-weakness',
-		name: 'Tipped Arrow Weakness',
+		name: 'Arrow of Weakness',
 		image: '/assets/items/tipped-arrow-weakness.png',
 		enchantable: false
 	},
@@ -1836,7 +1837,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'white-banner': {
 		key: 'white-banner',
 		name: 'White Banner',
-		image: '/assets/items/white-banner.png',
+		image: '/assets/items/white-banner.gif',
 		enchantable: false
 	},
 	'white-bed': {
@@ -1884,7 +1885,7 @@ export const itemDetails: Record<ItemKey, ItemValue> = {
 	'yellow-banner': {
 		key: 'yellow-banner',
 		name: 'Yellow Banner',
-		image: '/assets/items/yellow-banner.png',
+		image: '/assets/items/yellow-banner.gif',
 		enchantable: false
 	},
 	'yellow-bed': {
