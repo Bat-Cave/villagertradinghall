@@ -128,3 +128,110 @@
 		@apply bg-background font-seven text-foreground;
 	}
 }
+
+@layer components {
+	.minecraft-border {
+		--base-color: #48494b;
+		--border: hsl(from var(--base-color) h s calc(l - 15));
+		--inner-shadow-tl: hsl(from var(--base-color) h s calc(l + 20));
+		--inner-shadow-br: hsl(from var(--base-color) h s calc(l + 30));
+		--shadow: hsl(from var(--base-color) h s calc(l - 5));
+		--text-color: hsl(from var(--base-color) h s calc(l + 100));
+		--shadow-height: 6px;
+		--shadow-transform-height: calc(var(--shadow-height) / 2);
+
+		position: relative;
+		border-inline: 3px solid var(--border);
+		border-top: 3px solid var(--border);
+		background-color: var(--base-color);
+		padding-inline: 24px;
+		padding-block: 12px;
+		color: var(--text-color);
+		transition: all 0.12s ease;
+
+		&::before {
+			position: absolute;
+			inset: 0;
+			box-shadow:
+				inset 3px 3px var(--inner-shadow-tl),
+				inset -3px -3px var(--inner-shadow-br);
+			content: '';
+			pointer-events: none;
+		}
+
+		&::after {
+			position: absolute;
+			left: -3px;
+			right: -3px;
+			top: 100%;
+			height: var(--shadow-height);
+			background: var(--shadow);
+			border-left: 3px solid var(--border);
+			border-right: 3px solid var(--border);
+			border-bottom: 3px solid var(--border);
+			content: '';
+			transition: all 0.12s ease;
+			pointer-events: none;
+		}
+	}
+
+	.minecraft-button {
+		--base-color: #48494b;
+		--border: hsl(from var(--base-color) h s calc(l - 15));
+		--inner-shadow-tl: hsl(from var(--base-color) h s calc(l + 20));
+		--inner-shadow-br: hsl(from var(--base-color) h s calc(l + 30));
+		--shadow: hsl(from var(--base-color) h s calc(l - 5));
+		--text-color: hsl(from var(--base-color) h s calc(l + 100));
+		--shadow-height: 6px;
+		--shadow-transform-height: calc(var(--shadow-height) / 2);
+
+		position: relative;
+		border-inline: 3px solid var(--border);
+		border-top: 3px solid var(--border);
+		background-color: var(--base-color);
+		padding-inline: 24px;
+		padding-block: 12px;
+		color: var(--text-color);
+		transition: all 0.12s ease;
+
+		&:not([data-state='open']):hover {
+			transform: translateY(calc(var(--shadow-transform-height) * -1));
+		}
+
+		&:not([data-state='open']):active {
+			transform: translateY(var(--shadow-transform-height));
+		}
+
+		&::before {
+			position: absolute;
+			inset: 0;
+			box-shadow:
+				inset 3px 3px var(--inner-shadow-tl),
+				inset -3px -3px var(--inner-shadow-br);
+			content: '';
+			pointer-events: none;
+		}
+
+		&::after {
+			position: absolute;
+			left: -3px;
+			right: -3px;
+			top: 100%;
+			height: var(--shadow-height);
+			background: var(--shadow);
+			border-left: 3px solid var(--border);
+			border-right: 3px solid var(--border);
+			border-bottom: 3px solid var(--border);
+			content: '';
+			transition: all 0.12s ease;
+			pointer-events: none;
+		}
+
+		&:not([data-state='open']):hover::after {
+			height: calc(var(--shadow-height) + var(--shadow-transform-height));
+		}
+		&:not([data-state='open']):active::after {
+			height: var(--shadow-transform-height);
+		}
+	}
+}

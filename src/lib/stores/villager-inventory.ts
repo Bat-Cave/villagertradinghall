@@ -1,10 +1,14 @@
 import { createStore } from 'zustand/vanilla';
 import { persist } from 'zustand/middleware';
+import type { EnchantmentKey } from '$lib/enchantments';
 
 export type Villager = {
 	profession: string;
 	prominentTrades: {
 		trade: string;
+		amountGiven: number;
+		amountReceived: number;
+		enchantment?: EnchantmentKey;
 	}[];
 };
 

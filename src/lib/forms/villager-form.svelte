@@ -1,16 +1,15 @@
 <script lang="ts">
+	import TradeSelector from '$lib/components/trade-selector.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import * as Command from '$lib/components/ui/command/index.js';
-	import { Input } from '$lib/components/ui/input';
 	import * as Popover from '$lib/components/ui/popover/index.js';
-	import { itemDetails } from '$lib/items';
+	import { enchantments } from '$lib/enchantments';
 	import { villagerInventoryStore, type Villager } from '$lib/stores/villager-inventory';
 	import { professions } from '$lib/villagers';
 	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
-	import X from '@lucide/svelte/icons/x';
 	import { createForm } from '@tanstack/svelte-form';
-	import { tick } from 'svelte';
+	import { setContext, tick } from 'svelte';
 	import { z } from 'zod';
 
 	let {
@@ -26,41 +25,24 @@
 		professions[selectedProfession as keyof typeof professions].possibleTrades
 	);
 
-	const getLevelTrades = (level: string) =>
-		selectedProfessionTrades.filter((trade) => trade.level === level);
-
-	let levels = [
-		{ level: 'novice', label: 'Novice' },
-		{ level: 'apprentice', label: 'Apprentice' },
-		{ level: 'journeyman', label: 'Journeyman' },
-		{ level: 'expert', label: 'Expert' },
-		{ level: 'master', label: 'Master' }
-	];
-
 	const VillagerSchema = z.object({
 		profession: z.string(),
 		prominentTrades: z.array(
 			z.object({
-				trade: z.string()
-				// cost: z.number().min(1)
+				trade: z.string(),
+				amountGiven: z.number().min(1),
+				amountReceived: z.number().min(1),
+				enchantment: z.enum(enchantments).optional()
 			})
 		)
 	});
 
-	// We want to refocus the trigger button when the user selects
-	// an item from the list so users can continue navigating the
-	// rest of the form with the keyboard.
-	function closeAndFocusTrigger() {
-		open = false;
-		tick().then(() => {
-			triggerRef.focus();
-		});
-	}
-
 	const form = createForm(() => ({
 		defaultValues: {
-			profession: selectedProfession,
-			prominentTrades: [{ trade: '' }] as Villager['prominentTrades']
+			profession: Object.keys(professions)[1],
+			prominentTrades: [
+				{ trade: '', amountGiven: 1, amountReceived: 1, enchantment: undefined }
+			] as Villager['prominentTrades']
 		},
 		validators: {
 			onChange: VillagerSchema
@@ -75,6 +57,18 @@
 			form.reset();
 		}
 	}));
+
+	setContext('villagerForm', form);
+
+	// We want to refocus the trigger button when the user selects
+	// an item from the list so users can continue navigating the
+	// rest of the form with the keyboard.
+	function closeAndFocusTrigger() {
+		open = false;
+		tick().then(() => {
+			triggerRef.focus();
+		});
+	}
 </script>
 
 <form
@@ -102,7 +96,7 @@
 						<Popover.Root bind:open>
 							<Popover.Trigger bind:ref={triggerRef} class="w-full">
 								{#snippet child({ props })}
-									<Button variant="outline" {...props} role="combobox" aria-expanded={open}>
+									<Button {...props} role="combobox" aria-expanded={open}>
 										<div class="flex w-full items-center justify-between gap-2">
 											{field.state.value
 												? professions[field.state.value as keyof typeof professions].label
@@ -155,8 +149,7 @@
 						<p class="text-sm font-semibold">Important Trades:</p>
 						<Button
 							size="sm"
-							variant="outline"
-							onclick={() => field.pushValue({ trade: '' })}
+							onclick={() => field.pushValue({ trade: '', amountGiven: 1, amountReceived: 1 })}
 							type="button"
 							class="h-auto px-2 py-1 text-xs leading-none"
 						>
@@ -164,124 +157,8 @@
 						</Button>
 					</div>
 					<div class="mt-2 flex flex-col items-start gap-1">
-						<div
-							class="grid w-full grid-cols-[2.5fr_1fr] items-center gap-2 text-xs leading-none font-semibold text-muted-foreground uppercase"
-						>
-							<p>Trade</p>
-							<p class="flex items-center gap-2">
-								Cost <img
-									src="/assets/items/emerald.png"
-									alt=""
-									class="size-4 [image-rendering:pixelated]"
-								/>
-							</p>
-						</div>
-						{#each field.state.value as trade, i}
-							<div class="relative grid w-full grid-cols-[2.5fr_1fr] items-center gap-2">
-								{#if i > 0}
-									<Button
-										size="icon"
-										variant="ghost"
-										onclick={() => field.removeValue(i)}
-										class="absolute right-full size-5 translate-x-1/4 rounded-sm border border-destructive bg-white p-1 text-xs leading-none text-destructive/90 hover:bg-red-50 hover:text-destructive"
-									>
-										<X class="size-3" />
-										<span class="sr-only">Remove Trade {i + 1}</span>
-									</Button>
-								{/if}
-								<form.Field name={`prominentTrades[${i}].trade`}>
-									{#snippet children(subField)}
-										{@const selectedTrade = selectedProfessionTrades.find(
-											(trade) => trade.id === subField.state.value
-										)}
-										<div>
-											<label>
-												<Popover.Root>
-													<Popover.Trigger class="w-full">
-														{#snippet child({ props })}
-															<Button
-																variant="outline"
-																{...props}
-																role="combobox"
-																aria-expanded={open}
-															>
-																<div class="flex w-full items-center justify-between gap-2">
-																	{#if selectedTrade}
-																		{#each selectedTrade.wants as item}
-																			<img
-																				class="size-4 [image-rendeering:pixelated]"
-																				src={`/assets/items/${item.item}.png`}
-																				alt={item.item}
-																			/>
-																		{/each}
-																		{' -> '}
-																		{#each selectedTrade.gives as item}
-																			<img
-																				class="size-4 [image-rendeering:pixelated]"
-																				src={`/assets/items/${item.item}.png`}
-																				alt={item.item}
-																			/>
-																		{/each}
-																	{:else}
-																		Select a trade...
-																	{/if}
-																	<ChevronsUpDown class="ml-2 size-4 shrink-0 opacity-50" />
-																</div>
-															</Button>
-														{/snippet}
-													</Popover.Trigger>
-													<Popover.Content class="w-(--bits-popover-anchor-width) p-0">
-														<Command.Root>
-															<Command.Input placeholder="Search trade..." />
-															<Command.List>
-																<Command.Empty>No trade found.</Command.Empty>
-																{#each levels as level}
-																	<Command.Group heading={level.label}>
-																		{#each getLevelTrades(level.level) as trade}
-																			<Command.Item
-																				value={trade.id}
-																				onSelect={() => {
-																					subField.handleChange(trade.id);
-																					closeAndFocusTrigger();
-																				}}
-																			>
-																				{#each trade.wants as item}
-																					{@const detail = itemDetails[item.item]}
-																					<img
-																						class="size-6 object-contain [image-rendeering:pixelated]"
-																						src={item.enchanted && detail.enchantable
-																							? detail.enchantedImage
-																							: detail.image}
-																						alt={item.item}
-																					/>
-																				{/each}
-																				{' -> '}
-																				{#each trade.gives as item}
-																					{@const detail = itemDetails[item.item]}
-																					<img
-																						class="size-6 object-contain [image-rendeering:pixelated]"
-																						src={item.enchanted && detail.enchantable
-																							? detail.enchantedImage
-																							: detail.image}
-																						alt={item.item}
-																					/>
-																				{/each}
-																				{#if subField.state.value === trade.id}
-																					<CheckIcon class="ml-2 size-4 shrink-0 opacity-50" />
-																				{/if}
-																			</Command.Item>
-																		{/each}
-																	</Command.Group>
-																{/each}
-															</Command.List>
-														</Command.Root>
-													</Popover.Content>
-												</Popover.Root>
-											</label>
-										</div>
-									{/snippet}
-								</form.Field>
-							</div>
+						{#each field.state.value as _, i}
+							<TradeSelector {i} {field} {selectedProfessionTrades} />
 						{/each}
 					</div>
 					{#if field.state.meta.errors}

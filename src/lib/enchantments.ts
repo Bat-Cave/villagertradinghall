@@ -102,14 +102,18 @@ export const enchantments = [
 
 export type EnchantmentKey = (typeof enchantments)[number];
 export type Enchantment = {
+	key: EnchantmentKey;
+	label: string;
 	levelMax: string;
 	weight: string;
 	incompatible: EnchantmentKey[];
-	items: Array<ItemKey>;
+	items: Array<EnchantmentableItem>;
 };
 
 export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 	protection: {
+		key: 'protection',
+		label: 'Protection',
 		levelMax: '4',
 		weight: '10',
 		incompatible: ['blast-protection', 'fire-protection', 'projectile-protection'],
@@ -134,18 +138,24 @@ export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 		]
 	},
 	'aqua-affinity': {
+		key: 'aqua-affinity',
+		label: 'Aqua Affinity',
 		levelMax: '1',
 		weight: '2',
 		incompatible: [],
 		items: ['iron-helmet', 'chainmail-helmet', 'leather-cap', 'diamond-helmet', 'turtle-shell']
 	},
 	'bane-of-arthropods': {
+		key: 'bane-of-arthropods',
+		label: 'Bane of Arthropods',
 		levelMax: '5',
 		weight: '5',
 		incompatible: ['smite', 'sharpness', 'density', 'breach'],
 		items: ['iron-sword', 'diamond-sword', 'iron-axe', 'diamond-axe', 'mace']
 	},
 	'blast-protection': {
+		key: 'blast-protection',
+		label: 'Blast Protection',
 		levelMax: '4',
 		weight: '2',
 		incompatible: ['fire-protection', 'protection', 'projectile-protection'],
@@ -170,36 +180,48 @@ export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 		]
 	},
 	channeling: {
+		key: 'channeling',
+		label: 'Channeling',
 		levelMax: '1',
 		weight: '1',
 		incompatible: ['riptide'],
 		items: ['trident']
 	},
 	'depth-strider': {
+		key: 'depth-strider',
+		label: 'Depth Strider',
 		levelMax: '3',
 		weight: '2',
 		incompatible: ['frost-walker'],
 		items: ['iron-boots', 'chainmail-boots', 'leather-boots', 'diamond-boots']
 	},
 	efficiency: {
+		key: 'efficiency',
+		label: 'Efficiency',
 		levelMax: '5',
 		weight: '10',
 		incompatible: [],
 		items: ['iron-pickaxe', 'iron-shovel', 'iron-axe']
 	},
 	'feather-falling': {
+		key: 'feather-falling',
+		label: 'Feather Falling',
 		levelMax: '4',
 		weight: '5',
 		incompatible: [],
 		items: ['iron-boots', 'chainmail-boots', 'leather-boots', 'diamond-boots']
 	},
 	'fire-aspect': {
+		key: 'fire-aspect',
+		label: 'Fire Aspect',
 		levelMax: '2',
 		weight: '2',
 		incompatible: [],
 		items: ['iron-sword', 'diamond-sword', 'mace']
 	},
 	'fire-protection': {
+		key: 'fire-protection',
+		label: 'Fire Protection',
 		levelMax: '4',
 		weight: '5',
 		incompatible: ['blast-protection', 'protection', 'projectile-protection'],
@@ -224,66 +246,88 @@ export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 		]
 	},
 	flame: {
+		key: 'flame',
+		label: 'Flame',
 		levelMax: '1',
 		weight: '2',
 		incompatible: [],
 		items: ['bow']
 	},
 	fortune: {
+		key: 'fortune',
+		label: 'Fortune',
 		levelMax: '3',
 		weight: '2',
 		incompatible: ['silk-touch'],
 		items: ['iron-pickaxe', 'diamond-pickaxe']
 	},
 	'frost-walker': {
+		key: 'frost-walker',
+		label: 'Frost Walker',
 		levelMax: '2',
 		weight: '2',
 		incompatible: ['depth-strider'],
 		items: ['iron-boots', 'chainmail-boots', 'leather-boots', 'diamond-boots']
 	},
 	impaling: {
+		key: 'impaling',
+		label: 'Impaling',
 		levelMax: '5',
 		weight: '2',
 		incompatible: [],
 		items: ['trident']
 	},
 	infinity: {
+		key: 'infinity',
+		label: 'Infinity',
 		levelMax: '1',
 		weight: '1',
 		incompatible: ['mending'],
 		items: ['bow']
 	},
 	knockback: {
+		key: 'knockback',
+		label: 'Knockback',
 		levelMax: '2',
 		weight: '5',
 		incompatible: [],
 		items: ['iron-sword', 'diamond-sword']
 	},
 	looting: {
+		key: 'looting',
+		label: 'Looting',
 		levelMax: '3',
 		weight: '2',
 		incompatible: [],
 		items: ['iron-sword', 'diamond-sword']
 	},
 	loyalty: {
+		key: 'loyalty',
+		label: 'Loyalty',
 		levelMax: '3',
 		weight: '5',
 		incompatible: ['riptide'],
 		items: ['trident']
 	},
 	'luck-of-the-sea': {
+		key: 'luck-of-the-sea',
+		label: 'Luck of the Sea',
 		levelMax: '3',
 		weight: '2',
 		incompatible: [],
 		items: ['fishing-rod']
 	},
 	lure: {
+		key: 'lure',
+		label: 'Lure',
 		levelMax: '3',
 		weight: '2',
 		incompatible: [],
 		items: ['fishing-rod']
 	},
 	mending: {
+		key: 'mending',
+		label: 'Mending',
 		levelMax: '1',
 		weight: '2',
 		incompatible: ['infinity'],
@@ -324,24 +368,32 @@ export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 		]
 	},
 	multishot: {
+		key: 'multishot',
+		label: 'Multishot',
 		levelMax: '1',
 		weight: '2',
 		incompatible: ['piercing'],
 		items: ['crossbow']
 	},
 	piercing: {
+		key: 'piercing',
+		label: 'Piercing',
 		levelMax: '4',
 		weight: '1',
 		incompatible: ['multishot'],
 		items: ['crossbow']
 	},
 	power: {
+		key: 'power',
+		label: 'Power',
 		levelMax: '5',
 		weight: '1',
 		incompatible: [],
 		items: ['bow']
 	},
 	'projectile-protection': {
+		key: 'projectile-protection',
+		label: 'Projectile Protection',
 		levelMax: '4',
 		weight: '1',
 		incompatible: ['protection', 'blast-protection', 'fire-protection'],
@@ -366,66 +418,88 @@ export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 		]
 	},
 	punch: {
+		key: 'punch',
+		label: 'Punch',
 		levelMax: '2',
 		weight: '2',
 		incompatible: [],
 		items: ['bow']
 	},
 	'quick-charge': {
+		key: 'quick-charge',
+		label: 'Quick Charge',
 		levelMax: '3',
 		weight: '1',
 		incompatible: [],
 		items: ['crossbow']
 	},
 	respiration: {
+		key: 'respiration',
+		label: 'Respiration',
 		levelMax: '3',
 		weight: '2',
 		incompatible: [],
 		items: ['iron-helmet', 'chainmail-helmet', 'leather-cap', 'diamond-helmet', 'turtle-shell']
 	},
 	riptide: {
+		key: 'riptide',
+		label: 'Riptide',
 		levelMax: '3',
 		weight: '2',
 		incompatible: ['channeling', 'loyalty'],
 		items: ['trident']
 	},
 	sharpness: {
+		key: 'sharpness',
+		label: 'Sharpness',
 		levelMax: '5',
 		weight: '10',
 		incompatible: ['bane-of-arthropods', 'smite'],
 		items: ['iron-sword', 'diamond-sword', 'iron-axe', 'diamond-axe']
 	},
 	'silk-touch': {
+		key: 'silk-touch',
+		label: 'Silk Touch',
 		levelMax: '1',
 		weight: '1',
 		incompatible: ['fortune'],
 		items: ['iron-pickaxe', 'iron-shovel', 'iron-axe']
 	},
 	smite: {
+		key: 'smite',
+		label: 'Smite',
 		levelMax: '5',
 		weight: '5',
 		incompatible: ['bane-of-arthropods', 'sharpness', 'density', 'breach'],
 		items: ['iron-sword', 'diamond-sword', 'iron-axe', 'diamond-axe', 'mace']
 	},
 	'soul-speed': {
+		key: 'soul-speed',
+		label: 'Soul Speed',
 		levelMax: '3',
 		weight: '4',
 		incompatible: [],
 		items: ['iron-boots', 'chainmail-boots', 'leather-boots', 'diamond-boots']
 	},
 	sweeping: {
+		key: 'sweeping',
+		label: 'Sweeping',
 		levelMax: '3',
 		weight: '2',
 		incompatible: [],
 		items: ['iron-sword', 'diamond-sword']
 	},
 	'swift-sneak': {
+		key: 'swift-sneak',
+		label: 'Swift Sneak',
 		levelMax: '3',
 		weight: '4',
 		incompatible: [],
 		items: ['iron-leggings', 'chainmail-leggings', 'leather-pants', 'diamond-leggings']
 	},
 	thorns: {
+		key: 'thorns',
+		label: 'Thorns',
 		levelMax: '3',
 		weight: '4',
 		incompatible: [],
@@ -450,6 +524,8 @@ export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 		]
 	},
 	unbreaking: {
+		key: 'unbreaking',
+		label: 'Unbreaking',
 		levelMax: '3',
 		weight: '5',
 		incompatible: [],
@@ -490,6 +566,8 @@ export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 		]
 	},
 	'curse-of-binding': {
+		key: 'curse-of-binding',
+		label: 'Curse of Binding',
 		levelMax: '1',
 		weight: '4',
 		incompatible: [],
@@ -516,6 +594,8 @@ export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 		]
 	},
 	'curse-of-vanishing': {
+		key: 'curse-of-vanishing',
+		label: 'Curse of Vanishing',
 		levelMax: '1',
 		weight: '4',
 		incompatible: [],
@@ -557,21 +637,36 @@ export const enchantmentDetails: Record<EnchantmentKey, Enchantment> = {
 		]
 	},
 	density: {
+		key: 'density',
+		label: 'Density',
 		levelMax: '5',
 		weight: '5',
 		incompatible: ['breach', 'smite', 'bane-of-arthropods'],
 		items: ['mace']
 	},
 	breach: {
+		key: 'breach',
+		label: 'Breach',
 		levelMax: '4',
 		weight: '2',
 		incompatible: ['density', 'smite', 'bane-of-arthropods'],
 		items: ['mace']
 	},
 	'wind-burst': {
+		key: 'wind-burst',
+		label: 'Wind Burst',
 		levelMax: '3',
 		weight: '2',
 		incompatible: [],
 		items: ['mace']
 	}
+};
+
+export const getPossibleEnchantmentsForItem = (item: EnchantmentableItem) => {
+	return Object.entries(enchantmentDetails).reduce((acc, [, details]) => {
+		if (details.items.includes(item)) {
+			acc.push(details);
+		}
+		return acc;
+	}, [] as Enchantment[]);
 };
